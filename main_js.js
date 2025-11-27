@@ -17,14 +17,11 @@ function getPlayerChoice() {
             return 3;  
         default:
             console.error("Wrong answer buddy. Reply with: Rock, paper or scissors!");  
+            break;
     };
 };
 
 function playRockPaperScissors() {
     const playerDraw = getPlayerChoice();
-    const computerDraw = getRandomInt();
-
-    
-
-    
+    const computerDraw = getRandomInt();    
 };
