@@ -5,19 +5,26 @@ function getRandomInt() {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + 1);
 }
 
-function getComputerChoice() {
-    const draw = getRandomInt();
+function getPlayerChoice() {
+    const draw = prompt("Rock, Paper or Scissors?", "Rock")
 
     switch(draw) {
-        case(1): 
-            return "Rock";
-        case(2):
-            return "Paper";
-        case(3):
-            return "Scissors";    
+        case("Rock"): 
+            return 1;
+        case("Paper"):
+            return 2;
+        case("Scissors"):
+            return 3;  
+        default:
+            console.error("Wrong answer buddy. Reply with: Rock, paper or scissors!");  
     };
 };
 
 function playRockPaperScissors() {
-    const draw = prompt("Rock, Paper or Scissors?", "Rock");
+    const playerDraw = getPlayerChoice();
+    const computerDraw = getRandomInt();
+
+    
+
+    
 };
