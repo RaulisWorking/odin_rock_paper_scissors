@@ -8,20 +8,7 @@ function getRandomInt() {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + 1);
 }
 
-function getHumanChoice() {
-   
-    let choice = prompt("Rock, Paper or Scissors?", "Rock").toLowerCase();
-
-    if ((choice === "rock") || (choice === "paper") || (choice === "scissors")) {
-        return choice;
-    }
-    else {
-        console.warn("Wrong answer buddy. Reply with: rock, paper or scissors!");
-        return getHumanChoice();
-    };
-}
-
-// Prompt user for choice convert it to int
+// Generate computer choice
 function getComputerChoice() {
     const draw = getRandomInt();
 
@@ -35,7 +22,21 @@ function getComputerChoice() {
     };
 };
 
+// Prompt user for choice
+function getHumanChoice() {
+   
+    let choice = prompt("Rock, Paper or Scissors?", "Rock").toLowerCase();
 
+    if ((choice === "rock") || (choice === "paper") || (choice === "scissors")) {
+        return choice;
+    }
+    else {
+        console.warn("Wrong answer buddy. Reply with: rock, paper or scissors!");
+        return getHumanChoice();
+    };
+}
+
+// Play round of rock paper scissors
 function playRound(humanChoice, computerChoice) {  
 
     if (humanChoice === computerChoice) {
@@ -54,6 +55,7 @@ function playRound(humanChoice, computerChoice) {
     };        
 };
 
+// Play a 5 round game of rock paper scissors
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
