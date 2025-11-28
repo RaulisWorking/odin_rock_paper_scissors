@@ -1,6 +1,4 @@
 
-
-
 // Get random int between 1 and 3
 function getRandomInt() {
     const minCeiled = Math.ceil(1);
