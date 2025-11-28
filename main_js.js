@@ -11,16 +11,16 @@ function getRandomInt() {
 }
 
 function getHumanChoice() {
+   
     let choice = prompt("Rock, Paper or Scissors?", "Rock").toLowerCase();
 
     if ((choice === "rock") || (choice === "paper") || (choice === "scissors")) {
         return choice;
     }
     else {
-        console.warning("Wrong answer buddy. Reply with: Rock, paper or scissors!");
-        getHumanChoice();
+        console.warn("Wrong answer buddy. Reply with: Rock, paper or scissors!");
+        return getHumanChoice();
     };
-
 }
 
 // Prompt user for choice convert it to int
@@ -33,10 +33,7 @@ function getComputerChoice() {
         case(2):
             return "paper";
         case(3):
-            return "scissors";  
-        default:
-              
-            break;
+            return "scissors";   
     };
 };
 
@@ -56,6 +53,12 @@ function playRound(humanChoice, computerChoice) {
         computerScore += 1;
         console.log(`You lose! ${computerChoice} beats ${humanChoice}` );
     }        
-    console.log(`Score: \n Human: ${humanScore} ---- Computer ${computerScore}`);
+    console.log(`Score:
+    Human -> ${humanScore} || ${computerScore} <- Computer`);
 
 };
+
+const computerChoice = getComputerChoice();
+//const humanChoice = getHumanChoice();
+
+playRound(humanChoice, computerChoice)
