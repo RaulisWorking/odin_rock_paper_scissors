@@ -9,8 +9,11 @@ PLAY
 - Computer picks randomly.
 - After 5 rounds, the winner and final score show in the console
 
-Highlights
+HIGHLIGHTS
 - Input validation
 - Random computer choice
 - Round logic using if/else
 - Score tracking + loop
+
+RUN
+Refresh page
