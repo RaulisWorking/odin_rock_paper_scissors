@@ -76,4 +76,4 @@ function playGame() {
     console.log(`Final Score: \n Human: ${humanScore} \n Computer: ${computerScore}`);
 }
 
-playGame()
+playGame();
