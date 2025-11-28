@@ -40,17 +40,17 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === computerChoice) {
         console.log("It's a draw!");
-        return 0;
+        return "draw";
     }
     else if ((humanChoice === "rock" && computerChoice === "scissors") ||
              (humanChoice === "paper" && computerChoice === "rock") ||
              (humanChoice === "scissors" && computerChoice === "paper")) {
                 console.log(`You win this round! ${humanChoice} beats ${computerChoice}`);
-                return 1;
+                return "human";
             }   
     else {
         console.log(`You lose this round! ${computerChoice} beats ${humanChoice}` );
-        return 2;
+        return "computer";
     };        
 };
 
@@ -64,23 +64,15 @@ function playGame() {
         const humanChoice = getHumanChoice();
         let score = playRound(humanChoice, computerChoice);
 
-        if (score === 1) {
-            humanScore += 1;
-        }
-        else if (score === 2) {
-            computerScore += 1;
-        };
-    };
+        if (score === "human") humanScore++ 
+        else if (score === "computer") computerScore++
+          
+    }
 
-    if (humanScore < computerScore) {
-        console.log("You lost the game!");
-    }
-    else if (humanScore > computerScore) {
-        console.log("You won the game! Congratulations!");
-    }
-    else {
-        console.log("It's a draw");
-    };
+    if (humanScore < computerScore) console.log("You lost the game!");
+    else if (humanScore > computerScore) console.log("You won the game! Congratulations!");
+    else console.log("It's a draw");
+    
     console.log(`Final Score: \n Human: ${humanScore} \n Computer: ${computerScore}`);
 }
 
